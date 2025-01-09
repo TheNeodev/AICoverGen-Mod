@@ -331,6 +331,6 @@ if __name__ == '__main__':
     app.queue()
     app.launch(
         share=args.share_enabled,
-        server_name="aicovergenwebui",
+        server_name="",
         server_port=args.listen_port,
     )
