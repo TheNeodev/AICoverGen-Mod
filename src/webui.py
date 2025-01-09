@@ -327,6 +327,8 @@ if __name__ == '__main__':
                 local_upload_output_message = gr.Text(label='Output Message', interactive=False, scale=20)
                 model_upload_button.click(upload_local_model, inputs=[zip_file, local_model_name], outputs=local_upload_output_message)
 
+
+    app.queue()
     app.launch(
         share=args.share_enabled,
         server_name="aicovergenwebui",
