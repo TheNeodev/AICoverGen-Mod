@@ -305,7 +305,7 @@ def run_roformer(model_params, output_dir, model_name, filename, exclude_main=Fa
     }
     
     separator = Separator(output_dir=output_dir)
-    separator.load_model(model_filename=model_filename)
+    separator.load_model(model_filename=model_name)
     output_files = separator.separate(filename, output_names)
     
     vocals_file = f"{base_name}_Vocals.wav"
