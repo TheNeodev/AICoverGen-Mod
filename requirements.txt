@@ -1,22 +1,20 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
 deemix
 git+https://github.com/One-sixth/fairseq.git
 faiss-cpu==1.7.3
 ffmpeg-python>=0.2.0
-# gradio==3.39.0
 gradio==4.29.0
-lib==4.0.0
 librosa==0.10
 numpy==1.23.5
-onnxruntime_gpu
+onnxruntime-gpu==1.16.1
 praat-parselmouth>=0.4.2
 pedalboard==0.7.7
 pydub==0.25.1
 pyworld==0.3.4
-Requests==2.31.0
-# scipy==1.11.1
+requests==2.31.0
 scipy>=1.13.0,<2.0.0
 soundfile==0.12.1
---find-links https://download.pytorch.org/whl/torch_stable.html
 torch==2.0.1+cu118
 torchcrepe==0.0.23
 tqdm==4.65.0
