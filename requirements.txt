@@ -1,5 +1,5 @@
 deemix
-fairseq==0.12.2
+git+https://github.com/One-sixth/fairseq.git
 faiss-cpu==1.7.3
 ffmpeg-python>=0.2.0
 # gradio==3.39.0
