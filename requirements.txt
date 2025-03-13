@@ -1,5 +1,5 @@
 --find-links https://download.pytorch.org/whl/torch_stable.html
-
+torch==2.0.1+cu118
 deemix
 fairseq2
 faiss-cpu==1.7.3
@@ -15,7 +15,6 @@ pyworld==0.3.4
 requests==2.31.0
 scipy>=1.13.0,<2.0.0
 soundfile==0.12.1
-torch==2.0.1+cu118
 torchcrepe==0.0.23
 tqdm==4.65.0
 yt_dlp==2023.7.6
