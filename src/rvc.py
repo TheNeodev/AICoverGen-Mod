@@ -2,7 +2,7 @@ from multiprocessing import cpu_count
 from pathlib import Path
 
 import torch
-from fairseq import checkpoint_utils
+from fairseq2 import checkpoint_utils
 from scipy.io import wavfile
 
 from infer_pack.models import (
