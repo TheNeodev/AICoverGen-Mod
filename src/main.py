@@ -25,6 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 mdxnet_models_dir = os.path.join(BASE_DIR, 'mdxnet_models')
 rvc_models_dir = os.path.join(BASE_DIR, 'rvc_models')
 output_dir = os.path.join(BASE_DIR, 'song_output')
+cookies_path = os.path.join(BASE_DIR, 'configs/ytdl.txt')
 
 
 def get_youtube_video_id(url, ignore_playlist=True):
@@ -60,27 +61,32 @@ def get_youtube_video_id(url, ignore_playlist=True):
     return None
 
 
+import yt_dlp
+
 def yt_download(link):
     """
-    Download the audio from a YouTube link as an mp3 file.
+    Download the audio from a YouTube link as an mp3 file with cookies.
     """
     ydl_opts = {
         'format': 'bestaudio',
-        'outtmpl': '%(title)s',
+        'outtmpl': '%(title)s.%(ext)s',
         'nocheckcertificate': True,
-        'ignoreerrors': True,
-        'no_warnings': True,
-        'quiet': True,
+,
         'extractaudio': True,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3'
         }],
+        'cookiefile': f"{cookies_path}"  # Add cookies for authentication
     }
+    
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         result = ydl.extract_info(link, download=True)
-        download_path = ydl.prepare_filename(result, outtmpl='%(title)s.mp3')
-    return download_path
+        if result:
+            download_path = ydl.prepare_filename(result).replace('.webm', '.mp3').replace('.m4a', '.mp3')
+            return download_path
+        else:
+            return None
 
 
 def display_progress(message, percent, is_webui, progress=None):
