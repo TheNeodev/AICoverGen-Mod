@@ -71,7 +71,6 @@ def yt_download(link):
         'format': 'bestaudio',
         'outtmpl': '%(title)s.%(ext)s',
         'nocheckcertificate': True,
-,
         'extractaudio': True,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
