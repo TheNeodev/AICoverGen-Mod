@@ -1,7 +1,7 @@
 --find-links https://download.pytorch.org/whl/torch_stable.html
 
 deemix
-git+https://github.com/One-sixth/fairseq.git
+https://github.com/Bebra777228/TrainVocModel-EN/releases/download/fixed-packages/fairseq_fixed-0.13.0-cp311-cp311-linux_x86_64.whl
 faiss-cpu==1.7.3
 ffmpeg-python>=0.2.0
 gradio==4.29.0
